@@ -20,8 +20,4 @@ spec:
     - containerPort: 443
       name: https
   dnsPolicy: ClusterFirst
-  nodeSelector:
-    kubernetes.io/role: agent
-    beta.kubernetes.io/os: linux
-    type: virtual-kubelet
 

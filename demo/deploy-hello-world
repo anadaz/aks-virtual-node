@@ -26,3 +26,5 @@ spec:
         operator: Exists
       - key: azure.com/aci
         effect: NoSchedule
+      - key: use
+        operator: Exists

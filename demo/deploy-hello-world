@@ -28,3 +28,4 @@ spec:
         effect: NoSchedule
       - key: use
         operator: Exists
+        effect: NoSchedule

@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: d1-static-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: d1-static-web
+  template:
+    metadata:
+      labels:
+        app: d1-static-web
+    spec:
+      containers:
+      - name: http-server
+        image: ahmednada/static-web
+        ports:
+        - containerPort: 80
+      nodeSelector:
+        kubernetes.io/role: agent
+        beta.kubernetes.io/os: linux
+        type: virtual-kubelet
+      tolerations:
+      - key: virtual-kubelet.io/provider
+        operator: Exists
+      - key: azure.com/aci
+        effect: NoSchedule
+      - key: use
+        operator: Exists
+        effect: NoSchedule

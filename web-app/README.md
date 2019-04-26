@@ -6,4 +6,4 @@
 ## Login and publish to docker hub 
 ```docker login --username=<username> --email=<useremail>```
 
-```docker push -t <username>/static-web:latest```
+```docker push <username>/static-web:latest```

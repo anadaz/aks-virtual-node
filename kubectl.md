@@ -8,19 +8,21 @@ kubectl taint nodes virtual-node-aci-linux virtual-kubelet.io/provider-
 
 ## pod auto scale
 
-kubectl autoscale rs foo --min=2 --max=5 --cpu-percent=80
+kubectl autoscale deploy foo --min=2 --max=5 --cpu-percent=80
+
+## scale
+kubectl scale deploy/d1-static-web --replicas=10
 
 
-```az aks get-credentials -g rg-k8s-ae -n nadas-k8s-ae-virtual```
-```az aks browse -g rg-k8s-ae -n nadas-k8s-ae-virtual```
-
-
-## disable virtual node 
-```az aks disable-addons -g rg-k8s-ae -n nadas-k8s-ae-virtual --addons virtual-node ```
+```az aks get-credentials -g rg-azbc -n aks-azbc```
+```az aks browse -g rg-azbc -n aks-azbc```
 
 
 ## enable virtual node
-```az aks enable-addons -g rg-k8s-ae -n nadas-k8s-ae-virtual --addons virtual-node --subnet-name virtual-node-aci ```
+```az aks enable-addons -g rg-azbc -n aks-azbc --addons virtual-node --subnet-name virtual-node-aci ```
+
+## disable virtual node 
+```az aks disable-addons -g rg-azbc -n aks-azbc --addons virtual-node ```
 
 
 ## Install virtual kubelet

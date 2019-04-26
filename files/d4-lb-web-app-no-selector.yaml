@@ -16,7 +16,7 @@ kind: Deployment
 metadata:
   name: http-server-with-lb
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: http-server-with-lb

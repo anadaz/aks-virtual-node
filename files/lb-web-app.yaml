@@ -9,24 +9,24 @@ spec:
   ports:
   - port: 80
   selector:
-    app: aci-helloworld-with-lb
+    app: http-server-with-lb
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: aci-helloworld-with-lb
+  name: http-server-with-lb
 spec:
-  replicas: 10
+  replicas: 2
   selector:
     matchLabels:
-      app: aci-helloworld-with-lb
+      app: http-server-with-lb
   template:
     metadata:
       labels:
-        app: aci-helloworld-with-lb
+        app: http-server-with-lb
     spec:
       containers:
-      - name: aci-helloworld
+      - name: http-server
         image: katacoda/docker-http-server
         ports:
         - containerPort: 80

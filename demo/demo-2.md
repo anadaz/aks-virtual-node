@@ -10,6 +10,8 @@
 
 kubectl apply -f
 
-kubectl get pods
+kubectl get pods --watch
 
 az container list
+
+kubectl scale deploy/d2-lb-web-app --replicas=10

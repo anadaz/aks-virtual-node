@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: d2-lb-web-app-svc
+  name: d2-lb-web-app
   labels:
     app: webapp1-loadbalancer
 spec:
@@ -9,25 +9,25 @@ spec:
   ports:
   - port: 80
   selector:
-    app: d2-lb-web-app
+    app: http-server-with-lb
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: d2-lb-web-app
+  name: http-server-with-lb
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: d2-lb-web-app
+      app: http-server-with-lb
   template:
     metadata:
       labels:
-        app: d2-lb-web-app
+        app: http-server-with-lb
     spec:
       containers:
       - name: http-server
-        image: ahmednada/static-web
+        image: katacoda/docker-http-server
         ports:
         - containerPort: 80
       nodeSelector:

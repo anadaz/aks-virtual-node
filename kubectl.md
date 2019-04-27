@@ -32,7 +32,7 @@ kubectl scale deploy/d1-static-web --replicas=10
 #### - Delete all installed helm charts and remove charts from local repo
 - helm ls --all --short | xargs -L1 helm delete --purge
 
-```az aks install-connector --resource-group myAKSCluster --name myAKSCluster --connector-name virtual-kubelet --os-type Both```
+```az aks install-connector --resource-group myAKSCluster --name myAKSCluster --connector-name virtual-kubelet --os-type Windows```
 
 ## uninstall virtual kubelet
 

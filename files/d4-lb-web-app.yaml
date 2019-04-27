@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: d4-lb-web-app-svc
+  labels:
+    app: webapp1-loadbalancer
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: d4-lb-web-app
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: d4-lb-web-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: d4-lb-web-app
+  template:
+    metadata:
+      labels:
+        app: d4-lb-web-app
+    spec:
+      containers:
+      - name: http-server
+        image: ahmednada/static-web
+        ports:
+        - containerPort: 80

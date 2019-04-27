@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nanoserver-iis
+  name: d3-win-container
 spec:
   replicas: 1
   selector:

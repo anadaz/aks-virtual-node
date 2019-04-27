@@ -1,4 +1,5 @@
-## demo 4
+## demo 4 - CAUTION AKS cluster may break
+
 - edit replica to 1
 - deploy
 - stop scheduling for node
@@ -18,3 +19,5 @@ az aks browse -g rg-azbc -n aks-azbc
 
 
 kubectl uncordon aks-agentpool-93729238-0
+
+kubectl taint nodes virtual-node-aci-linux virtual-kubelet.io/provider=aci:NoSchedule

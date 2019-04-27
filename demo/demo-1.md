@@ -8,8 +8,7 @@
 
 
 
-## if enabled already
-az aks disable-addons -g rg-azbc -n aks-azbc --addons virtual-node 
+
 
 watch -n 5 kubectl get nodes
 
@@ -21,3 +20,6 @@ az container list -o table
 
 
 kubectl delete -f ./files/d1-static-web.yaml
+
+## if enabled already
+az aks disable-addons -g rg-azbc -n aks-azbc --addons virtual-node 

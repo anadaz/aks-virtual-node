@@ -1,4 +1,5 @@
-## demo 4 - CAUTION AKS cluster may break
+## demo 4 - CAUTION: This may break your AKS cluster.
+Run one pod on real node then scale into ACI with replica pods
 
 - edit replica to 1
 - deploy

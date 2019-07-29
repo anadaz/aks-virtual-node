@@ -1,4 +1,6 @@
 ## demo three
+Install virtual-kubelet and deploy a windows container
+
 - deploy windows container
 - check pods
 - pod will be pending

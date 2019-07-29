@@ -1,4 +1,5 @@
 ## demo two
+Scale the webapp and watch ACI containers
 
 - check tolerations
 - Deploy service Load Balancer

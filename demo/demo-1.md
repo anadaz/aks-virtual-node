@@ -1,4 +1,6 @@
 ## demo one
+Enable virtual node and deploy a webapp into ACI
+
 - Enable virtual node
 - Check nodes in cluster
 - Check pods wide to check node running them
